@@ -19,6 +19,16 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(value="prototype")
 public class Users {
+	public Users(String string, String string2, String string3) {
+		this.name=string;
+		this.email=string2;
+		this.password=string3;
+	}
+	public Users()
+	{
+		
+	}
+
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role

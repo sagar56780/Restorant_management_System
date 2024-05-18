@@ -18,9 +18,6 @@ public class HibernateDao {
 		em=emf.createEntityManager();
 		et=em.getTransaction();
 	}
-	public static void main(String[] args) {
-		HibernateDao hdao=new HibernateDao();
-		System.out.println(hdao);
-	}
+	
 
 }

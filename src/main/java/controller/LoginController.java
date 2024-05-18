@@ -38,16 +38,22 @@ public class LoginController {
 		if(result!=null)
 		{
 			if(result.getRole().equals("manager")) {
-				HttpSession session=req.getSession();
-				session.setAttribute("user", result);
-				
+				  Cookie cookie = new Cookie("userpwd", "1122");
+		            cookie.setMaxAge(10); // Cookie expires in 1 hour (adjust as needed)
+		            resp.addCookie(cookie);
+		
+				req.setAttribute("id", id);
+			
 	
 			RequestDispatcher manager=req.getRequestDispatcher("manager_operations.jsp");
 			try {
-				Cookie cookies=new Cookie("Id", id+"");
-				resp.addCookie(cookies);
-				req.setAttribute("id", id);
+
+			
+				
+		
+				
 				manager.forward(req, resp);
+
 			} catch (ServletException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
